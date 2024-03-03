@@ -27,6 +27,10 @@ export default function GetBooks() {
     const [price, setPrice] = useState(0);
     const [cover, setCover] = useState('');
     const [modify, setModify] = useState(0);
+
+    const handleReview = () => {
+        console.log(`${name}, ${author}, ${year}, ${editorial}, ${price}, ${cover}`);
+    }
        
     const handleSubmit = () => {
         let dataRequest = `{
@@ -160,7 +164,7 @@ export default function GetBooks() {
                                                     
                                                 </div>}
                                                 <div className="modal-footer">
-                                                    <button type="button" className="btn btn-outline-warning" data-bs-dismiss="modal">Close</button>
+                                                    <button onClick={handleReview} type="button" className="btn btn-outline-warning" data-bs-dismiss="modal">Close</button>
                                                 </div>
                                             </div>
                                         </div>
